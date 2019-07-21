@@ -7,11 +7,19 @@
     "clean": "bsb -clean-world"
   },
   "keywords": [
-    "BuckleScript"
+    "BuckleScript",
+    "Sentry",
+    "Sentry SDK Browser"
   ],
-  "author": "",
+  "author": "Lars Hisken <larshisken@protonmail.com>",
   "license": "MIT",
+  "homepage": "https://github.com/larshisken/bs-sentry-browser",
+  "repository": "git@github.com:larshisken/bs-sentry-browser.git",
+  "bugs": "https://github.com/larshisken/bs-sentry-browser/issues",
   "devDependencies": {
     "bs-platform": "^5.0.4"
+  },
+  "peerDependencies": {
+    "@sentry/browser": "^5.5.0"
   }
 }
