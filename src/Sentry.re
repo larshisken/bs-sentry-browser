@@ -30,6 +30,9 @@ external makeConfig:
 [@bs.module "@sentry/browser"]
 external configureScope: (scope => unit) => unit = "configureScope";
 
+[@bs.module "@sentry/browser"]
+external withScope: (scope => unit) => unit = "withScope";
+
 [@bs.send] external setExtras: (scope, Js.t('a)) => unit = "setExtras";
 
 [@bs.send] external setExtra: (scope, string, 'a) => unit = "setExtra";
