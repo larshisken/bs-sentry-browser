@@ -30,9 +30,13 @@ external makeConfig:
 [@bs.module "@sentry/browser"]
 external configureScope: (scope => unit) => unit = "configureScope";
 
-[@bs.send] external setExtra: (scope, Js.t('a)) => unit = "setExtra";
+[@bs.send] external setExtras: (scope, Js.t('a)) => unit = "setExtras";
 
-[@bs.send] external setTag: (scope, Js.t('a)) => unit = "setTag";
+[@bs.send] external setExtra: (scope, string, 'a) => unit = "setExtra";
+
+[@bs.send] external setTags: (scope, Js.t('a)) => unit = "setTags";
+
+[@bs.send] external setTag: (scope, string, string) => unit = "setTag";
 
 [@bs.send] external setUser: (scope, Js.t('a)) => unit = "setUser";
 
