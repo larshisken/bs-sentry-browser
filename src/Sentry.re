@@ -43,6 +43,21 @@ external withScope: (scope => unit) => unit = "withScope";
 
 [@bs.send] external setUser: (scope, Js.t('a)) => unit = "setUser";
 
+[@bs.send] external setLevelJs: (scope, string) => unit = "setLevel";
+
+[@bs.deriving jsConverter]
+type level = [
+  | [@bs.as "fatal"] `fatal
+  | [@bs.as "error"] `error
+  | [@bs.as "warning"] `warning
+  | [@bs.as "log"] `log
+  | [@bs.as "info"] `info
+  | [@bs.as "debug"] `debug
+  | [@bs.as "critical"] `critical
+];
+
+let setLevel = (scope, level) => setLevelJs(scope, levelToJs(level));
+
 [@bs.module "@sentry/browser"]
 external addBreadcrumbs: Js.t('a) => unit = "addBreadcrumbs";
 
